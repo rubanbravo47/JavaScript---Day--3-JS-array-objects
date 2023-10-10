@@ -1,0 +1,25 @@
+how to compare two JSON have the same properties without order?
+a. let obj1 = { name:"Person 1", age:5};
+b. let obj2 ={ age:5, name:"Person 1"}
+
+// code 
+
+let obj1 = { name: "Person 1", age: 5 };
+let obj2 = { age: 5, name: "Person 1" };
+
+// Convert JSON objects to strings
+let str1 = JSON.stringify(obj1);
+let str2 = JSON.stringify(obj2);
+
+// Sort the strings
+str1 = str1.split('').sort().join('');
+str2 = str2.split('').sort().join('');
+
+// Compare the sorted strings
+if (str1 === str2) {
+  console.log("The JSON objects are equal.");
+} else {
+  console.log("The JSON objects are not equal.");
+}
+// output Answer
+// -->The JSON objects are equal.
